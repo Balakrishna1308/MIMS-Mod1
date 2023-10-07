@@ -55,7 +55,7 @@ nav ul ul li {
 }
 
 main {
-  padding: 20px;
+  /* padding: 20px; */
   display: flex;
   justify-content: space-between;
 }
