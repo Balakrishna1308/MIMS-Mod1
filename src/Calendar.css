@@ -1,0 +1,41 @@
+/* Calendar.css */
+
+.calendar {
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #fff;
+  display: inline-block;
+  width: 30%;
+}
+
+.calendar header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  height: 15px;
+}
+
+.calendar button {
+  background-color: #007acc;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Style the individual day cells */
+.calendar table {
+  width: 100%;
+  border-collapse: collapse; /* Add this property to ensure proper table rendering */
+}
+
+.calendar td {
+  border: 1px solid #ccc;
+  padding: 5px;
+  text-align: center;
+  width: 14.2857%;
+}
+
+/* Add more styles as needed */
