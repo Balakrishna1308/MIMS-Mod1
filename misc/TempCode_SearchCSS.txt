@@ -1,0 +1,25 @@
+/* Search.css (or add styles to your existing CSS file) */
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search input {
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.search button {
+  /* background-color: #007acc; */
+  background-color: rgb(116, 172, 13);
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.top-right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

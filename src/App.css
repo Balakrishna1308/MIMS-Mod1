@@ -16,6 +16,7 @@ body {
   flex-direction: column; /* Stack children vertically */
   justify-content: center; /* Center children vertically */
   align-items: center; /* Center children horizontally */ 
+  /* margin-bottom: 10px; */
 }
 
 /* Add more styles specific to your App component if needed */

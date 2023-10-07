@@ -84,13 +84,6 @@ import Search from './Search';
 
 
 
-import Notification from './Notification';
-
-
-// import Search from './Notification';
-
-
-
 
 
 // const tasks = [
@@ -107,18 +100,7 @@ function App() {
       {/* <Navigation /> */}
       {/* Include the TaskList component and pass the tasks prop */}
       {/* <TaskList tasks={tasks} /> */}
-
-      <div className="top-right">
-        <Search />
-      </div>
-
-      {/* <Search /> */}
-
-
-      
-        <Notification />
-      
-
+      <Search />
 
       <Calendar />
     </div>

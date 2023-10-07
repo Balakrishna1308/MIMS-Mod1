@@ -1,0 +1,15 @@
+/* Notification.css */
+.notification {
+  /* Your existing styles */
+  /* ... */
+
+  /* Positioning for top-left corner */
+  /* position: fixed; */
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  transform: translateX(0);
+  color: white;
+}
+
+/* Add more styles as needed */
