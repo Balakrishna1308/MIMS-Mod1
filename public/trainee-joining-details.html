@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainee Joining Details</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            /* background-color: #d3a9a9; */
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            /* background-color: #fff; */
+            background-color: #ecd1d1; 
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        h3 {
+            color: #007bff; /* Blue color for section headings */
+        }
+
+        /* Style form labels */
+        label {
+            /* font-weight: bold; */
+            margin-bottom: 5px;
+        }
+
+        /* Style input fields and textareas */
+        input[type="text"],
+        input[type="file"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Style submit button */
+        button[type="submit"] {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        /* Add hover effect for the submit button */
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777; /* Change the color to your preference */
+        }
+
+
+        
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Trainee Joining Details</h2>
+    <form action="/submit-joining-form" method="post" enctype="multipart/form-data">
+        <!-- Personal Information -->
+        <h3>Personal Information</h3>
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required>
+
+        <label for="dateOfBirth">Date of Birth:</label>
+        <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+        <br><br>
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" required></textarea>
+
+        <!-- Educational Information -->
+        <h3>Educational Information</h3>
+        <label for="studentID">Student ID:</label>
+        <input type="text" id="studentID" name="studentID" required>
+
+        <label for="program">Academic Program:</label>
+        <input type="text" id="program" name="program" required>
+
+        <!-- Identification Documents -->
+        <h3>Identification Documents</h3>
+        <label for="idDocument">Upload ID Document:</label>
+        <input type="file" id="idDocument" name="idDocument" accept=".pdf, .jpg, .jpeg, .png" required>
+
+        <!-- Medical History -->
+        <h3>Medical History</h3>
+        <label for="medicalHistory">Medical History:</label>
+        <textarea id="medicalHistory" name="medicalHistory" rows="4" required></textarea>
+
+        <!-- Emergency Contact Information -->
+        <h3>Emergency Contact Information</h3>
+        <label for="emergencyContactName">Emergency Contact Name:</label>
+        <input type="text" id="emergencyContactName" name="emergencyContactName" required>
+
+        <label for="emergencyContactNumber">Emergency Contact Number:</label>
+        <input type="text" id="emergencyContactNumber" name="emergencyContactNumber" required>
+
+        <!-- Additional Documents -->
+        <h3>Additional Documents</h3>
+        <label for="otherDocuments">Upload Other Documents:</label>
+        <input type="file" id="otherDocuments" name="otherDocuments[]" accept=".pdf, .jpg, .jpeg, .png" multiple>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit Joining Form</button>
+    </form>
+
+    <br>
+
+    <footer>
+        &copy; 2023 Myshow4all. All Rights Reserved.
+    </footer>
+
+</div>
+</body>
+</html>
