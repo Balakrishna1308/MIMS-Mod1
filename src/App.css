@@ -15,8 +15,18 @@ body {
   display: flex; /* Use flexbox to center content vertically */
   flex-direction: column; /* Stack children vertically */
   justify-content: center; /* Center children vertically */
-  align-items: center; /* Center children horizontally */ 
+  /* align-items: center; Center children horizontally  */
   /* margin-bottom: 10px; */
 }
 
 /* Add more styles specific to your App component if needed */
+.left-aligned {
+  align-items: left; /* You can use 'flex-start' or 'flex-end' for different alignments */
+  margin-top: -300px;
+}
+
+/* 
+.right-aligned {
+  align-items: right; /* You can use 'flex-start' or 'flex-end' for different alignments */
+  /* margin-top: -300px; */
+/* } */

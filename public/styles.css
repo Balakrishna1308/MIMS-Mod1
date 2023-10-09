@@ -8,6 +8,7 @@ body {
 
 header {
   background-color: #007acc;
+  /* background-color: #5792ba; */
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -114,4 +115,6 @@ footer {
   /* position: fixed; */
   bottom: 0;
   width: 100%;
+  /* position: absolute; */
+  position: inherit;
 }

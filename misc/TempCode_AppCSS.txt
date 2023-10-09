@@ -115,3 +115,33 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+
+=====================
+
+
+/* App.css */
+
+/* Reset default margin and padding for the entire page */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply a background color to the entire app */
+.App {
+  /* background-color: #f0f0f0; Change this color to your desired background */
+  background-color: #f9f2f2;
+  font-family: Arial, sans-serif; /* Set the default font family */
+  height: 100vh; /* Make the app take up the full viewport height */
+  display: flex; /* Use flexbox to center content vertically */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center children vertically */
+  align-items: center; /* Center children horizontally */ 
+  /* margin-bottom: 10px; */
+}
+
+/* Add more styles specific to your App component if needed */
+
+
+===============
