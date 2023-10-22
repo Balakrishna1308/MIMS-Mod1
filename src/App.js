@@ -4,11 +4,13 @@ import './App.css';
 import Calendar from './Calendar'; 
 import Search from './Search';
 import Notification from './Notification';
+import Tasks from './Tasks';
 import FileUpload from './FileUpload';
 import './Flashcard.css';
 import Progress from './Progress';
 import FileUploadFlashcard from './FileUploadFlashcard';
 import Feedback from './Feedback';
+import Certificate from './Certificate';
 
 
 function App() {
@@ -22,12 +24,14 @@ function App() {
         </div>
       </div>
     <FileUpload />
-    <FileUploadFlashcard />
+    {/* <FileUploadFlashcard /> */}
     <Progress status="In Progress" percentage={75} />
     <Search />
+    <Tasks/>
     <Notification />
     <Feedback/>
-   </div>
+    <Certificate /> 
+    </div>
   );
 }
 

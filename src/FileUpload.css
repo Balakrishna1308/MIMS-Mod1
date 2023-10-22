@@ -4,13 +4,12 @@
   margin-right: 20px; /* Add some right margin for spacing */
 }
 
-.right-aligned{
+/* .right-aligned{
   position: absolute;
   top: 20px;
   right: 20px;
-  /* margin-right: 0; */
   margin-top: 800px;
-}
+} */
 
 /* FileUpload.css */
 
@@ -20,15 +19,22 @@
   
   /* margin-top: 20px;  */
   /* margin-right: 100px; */
+  background-color: #0d5d9a;
+  color: #fff;
+
+
+
+  padding: 100px;
 
 
 
   font-family: Arial, sans-serif;
-  border: 1px solid #ccc;
+  border: 1.5px solid #ccc;
+  width: 26%;
 
 
 
-  padding: 100px 40px 100px 25px;
+  /* padding: 100px 40px 100px 25px; */
 
 
 
@@ -49,8 +55,9 @@
 
 /* Style the custom button */
 .file-upload-container button {
-  background-color: #0d5d9a;
-  color: #fff;
+  /* background-color: #0d5d9a; */
+  background-color: white;
+  color: black;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
@@ -58,5 +65,5 @@
 }
 
 .file-upload-container button:hover {
-  background-color: #00508b; /* Change the background color on hover */
+  background-color: #00508b;   
 }

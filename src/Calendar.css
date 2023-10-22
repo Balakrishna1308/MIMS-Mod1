@@ -57,15 +57,15 @@
   border: 1px solid #ccc;
   padding: 20px;
   background-color: #fff;
-  width: 40%;
-  margin-top: 1800px; /* Adjust as needed */
+  width: 42%;
+  margin-top: 2400px; /* Adjust as needed */
 }
 
 .calendar header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 15px;      
+  height: 15px;     
 }
 
 .calendar button {

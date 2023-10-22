@@ -1,0 +1,23 @@
+/* Certificate.css */
+
+.certificate-container {
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #fff;
+  width: 40%;
+  margin-top: 20px; /* Adjust the margin as needed */
+
+  /* Center the content within the container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+
+.certificate-space {
+  margin-right: 20px; /* Adjust the margin as needed */
+}
