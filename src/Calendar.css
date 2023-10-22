@@ -5,18 +5,22 @@
   border: 1px solid #ccc;
   padding: 20px;
   background-color: #fff;
+  /* background-color: black; */
   display: inline-block;
   width: 40%;
 
-  margin-top: 170px;
+  /* margin-top: 170px; */
+  margin-top: 740px;
 }
 
 .calendar header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
-  height: 15px;
+  /* margin-bottom: -100px; */
+  margin-top: 261px;
+  height: 15px;  
+  
 }
 
 .calendar button {

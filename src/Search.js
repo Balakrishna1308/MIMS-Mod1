@@ -1,12 +1,7 @@
 // Search.js
 import React, { useState } from 'react';
 
-
-
 import './Search.css'; // Import the CSS file for the Search component
-
-
-
 
 function Search(props) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -25,6 +20,7 @@ function Search(props) {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
+      
       <button onClick={handleSearch}>Search</button>
     </div>
   );

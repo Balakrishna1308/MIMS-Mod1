@@ -15,10 +15,13 @@ function Notification() {
 
   return (
     <div className={`notification ${showNotification ? 'show' : ''} top-left`}>
+      
       <button className="close-button" onClick={() => setShowNotification(false)}>
         &#x2716;
       </button>
-      <p>You have one notification.</p>
+
+      <p>Notification.</p>
+      
     </div>
   );
 }
