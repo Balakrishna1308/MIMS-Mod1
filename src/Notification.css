@@ -4,10 +4,10 @@
   /* ... */
 
   /* Positioning for top-left corner */
-  position: absolute;
+  /* position: absolute; */
   /* /* position: absolute; */
-  top: 20px;
-  left: 20px;
+  /* top: 20px; */
+  /* left: 20px; */
   transform: translateX(0);
   color: rgb(212, 125, 125);
   color: white;
@@ -22,7 +22,7 @@
   text-align: center; 
 
 
-  margin-top: 1500px;
+  /* margin-top: 1500px; */
 }
 
 

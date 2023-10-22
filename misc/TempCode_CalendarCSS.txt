@@ -304,4 +304,60 @@
 
 ============
 
+/* Calendar.css */
+
+.calendar {
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #fff;
+  /* background-color: black; */
+  display: inline-block;
+  width: 40%;
+
+  /* margin-top: 170px; */
+  /* margin-top: 940px; */
+  /* margin-top: 20px; */
+  margin-top: 740px;
+}
+
+.calendar header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-bottom: -100px; */
+  /* margin-top: 261px; */
+  height: 15px;  
+  margin-top: 100px;
+  
+}
+
+.calendar button {
+  background-color: #007acc;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Style the individual day cells */
+.calendar table {
+  width: 100%;
+  border-collapse: collapse; /* Add this property to ensure proper table rendering */
+}
+
+.calendar td {
+  border: 1px solid #ccc;
+  padding: 5px;
+  text-align: center;
+  width: 14.2857%;
+}
+
+/* Add more styles as needed */
+
+
+==================
+
+
+
 

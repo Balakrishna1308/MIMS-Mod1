@@ -18,8 +18,8 @@
 .file-upload-container {
   text-align: center; /* Center content horizontally */
   
-  margin-top: 20px; /* Add top margin for spacing */
-  margin-right: 100px;
+  /* margin-top: 20px;  */
+  /* margin-right: 100px; */
 
 
 
@@ -38,8 +38,8 @@
   
   display: inline-block;
   /* width: 100%; */
-  width: 90%;
-  height: 43px;
+  /* width: 90%; */
+  /* height: 43px; */
 }
 
 /* Style the input */
