@@ -30,7 +30,8 @@ function Calendar() {
   const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   return (
-    <div className="calendar">
+    // <div className="calendar">
+    <div className="calendar-container">
       <header>
         <button onClick={() => setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1))}>
           Previous Month

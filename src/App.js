@@ -8,6 +8,8 @@ import FileUpload from './FileUpload';
 import './Flashcard.css';
 import Progress from './Progress';
 import FileUploadFlashcard from './FileUploadFlashcard';
+import Feedback from './Feedback';
+
 
 function App() {
   return (
@@ -24,6 +26,7 @@ function App() {
     <Progress status="In Progress" percentage={75} />
     <Search />
     <Notification />
+    <Feedback/>
    </div>
   );
 }
