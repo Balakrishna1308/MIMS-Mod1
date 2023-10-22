@@ -1,0 +1,57 @@
+/* Calendar.css */
+
+.calendar-container {
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #fff;
+  width: 40%;
+  /* margin-top: 20px;  */
+  margin-top: 93px;
+
+
+
+
+  margin-left: auto;
+}
+
+.calendar-container header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  /* margin-top: 2410px; */
+  margin-top: 2340px;
+  width: 29.5%;
+}
+
+.calendar-container button {
+  background-color: #007acc;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.calendar-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px; /* Add margin to space content below the header */
+}
+
+.calendar-container th,
+.calendar-container td {
+  border: 1px solid #ccc;
+  padding: 5px;
+  text-align: center;
+  width: 14.2857%;
+}
+
+.calendar-container th {
+  background-color: #007acc;
+  color: #fff;
+}
+
+.calendar-container td.null {
+  background-color: #f7f7f7;
+}

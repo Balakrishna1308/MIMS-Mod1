@@ -50,17 +50,21 @@
 
 
 
+
+
+
 /* Calendar.css */
 
-.calendar-container {
+/* .calendar-container {
   font-family: Arial, sans-serif;
   border: 1px solid #ccc;
   padding: 20px;
   background-color: #fff;
-  width: 42%;
-  margin-top: 2400px; /* Adjust as needed */
-}
-
+  width: 43%; */
+  /* margin-top: 1400px; */
+  
+/* } */
+/* 
 .calendar header {
   display: flex;
   justify-content: space-between;
@@ -76,7 +80,6 @@
   cursor: pointer;
 }
 
-/* Style the individual day cells */
 .calendar table {
   width: 100%;
   border-collapse: collapse;
@@ -87,4 +90,4 @@
   padding: 5px;
   text-align: center;
   width: 14.2857%;
-}
+} */
