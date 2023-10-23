@@ -1,18 +1,24 @@
 /* Progress.css */
 
 .progress-container {
-  background-color: #f7f7f7;
+  /* background-color: #f7f7f7; */
+  background-color: #0d5d9a;;
   border: 1px solid #ddd;
   padding: 10px;
   border-radius: 5px;
   text-align: center;  
   width: 44%;    
 
+  color: white;
+
+  
 
 
 
 
-  margin-left: auto;
+
+
+  /* margin-left: auto; */
 
 
 
@@ -20,11 +26,16 @@
   
 }
 
+
 .status {
   font-weight: bold;
-  color: #007acc;
+  color:#4caf50;
 }
 
 .percentage {
   color: #4caf50;
+}
+
+.progress-heading{
+  color: white;
 }

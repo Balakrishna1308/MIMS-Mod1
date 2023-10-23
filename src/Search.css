@@ -2,6 +2,11 @@
 .search {
   display: flex;
   align-items: center;
+
+
+  /* color: white; */
+
+
 }
 
 .search input {
@@ -9,12 +14,28 @@
   margin-right: 10px;
   /* margin-bottom: 10px; */
   width: 25%;
+  /* background-color: blue; */
+  
+  
+  
+
+  background-color: white; 
+  color: #0d5d9a;
+
+
+
+
+  margin-left: auto;
+
+
+
 
 }
 
 .search button {
-  background-color: rgb(116, 172, 13);
-  color: #fff;
+  /* background-color: rgb(116, 172, 13); */
+  background-color: white;
+  color: #0d5d9a;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
@@ -24,7 +45,9 @@
 
   /* Hover styles */
   &:hover {
-    background-color: #a9e11b; /* Change the background color on hover */    
+    /* background-color: #a9e11b;  */
+    background-color: #0d5d9a;
+    color: white;
   }
 }
 

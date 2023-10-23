@@ -6,6 +6,7 @@
 
 /* Add margin or padding to space out components */
 .container > * {
-  margin-bottom: 120px;   
+  /* margin-bottom: 120px;    */
+  margin-bottom: 240px;
   
 }

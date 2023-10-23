@@ -5,8 +5,6 @@
   border: 1px solid #ccc;
   padding: 20px;
   background-color: #fff;
-  /* background-color: #0d5d9a; */
-  /* color: white; */
   width: 40%;
   margin-top: 20px; /* Adjust the margin as needed */
 
@@ -15,9 +13,6 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-
-  margin-left: auto;
-  color: #00578f;
 }
 
 
@@ -25,8 +20,4 @@
 
 .certificate-space {
   margin-right: 20px; /* Adjust the margin as needed */
-}
-
-h2{
-  color: #00578f;
 }

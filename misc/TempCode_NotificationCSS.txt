@@ -12,7 +12,6 @@
   color: rgb(212, 125, 125);
   color: white;
   color: black; 
-  
 
   
   
@@ -26,5 +25,12 @@
 
   /* margin-top: 1500px; */
 }
+
+
+
+
+====================
+
+
 
 

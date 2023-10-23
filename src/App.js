@@ -49,12 +49,15 @@ function App() {
 
     <FileUpload />
     {/* <FileUploadFlashcard /> */}
-    <Progress status="In Progress" percentage={75} />
     <Search />
+    <Progress status="In Progress" percentage={75} />
+    
     <Tasks/>
     <Notification />
-    <Feedback/>
+    
     <Certificate />
+
+    <Feedback/>
 
 
 

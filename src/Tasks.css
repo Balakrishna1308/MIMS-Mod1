@@ -11,7 +11,7 @@
 
 
 
-  margin-left: auto;
+  margin-left: auto; 
 
 
 
@@ -20,7 +20,7 @@
 
 .task-list {
   list-style: none;
-  padding: 0;
+  padding: 0;  
 }
 
 .task-list li {
@@ -46,3 +46,4 @@
 .task-toggle:hover {
   background-color: #00578f;
 }
+

@@ -17,7 +17,7 @@ function Feedback() {
 
   return (
     <div className="feedback-container">
-      <h2>Feedback</h2>
+      <h2   className="feedback-heading" >Feedback</h2>
       {submitted ? (
         <div className="feedback-submitted">
           <p>Thank you for your feedback!</p>
