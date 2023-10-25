@@ -3,7 +3,8 @@
 .certificate-container {
   font-family: Arial, sans-serif;
   border: 1px solid #ccc;
-  padding: 20px;
+  /* padding: 20px; */
+  padding: 40px 25px 50px;
   background-color: #fff;
   /* background-color: #0d5d9a; */
   /* color: white; */

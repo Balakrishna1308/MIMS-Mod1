@@ -15,14 +15,18 @@
   
 
   
+  padding: 100px 25px 100px;
+
+
   
   
-  width: 440px;
+  width: 41%;
   height: 30px;
   /* background-color: rgb(128, 142, 103); */
   background-color: #0d5d9a;;
   text-align: center; 
 
+  color:#4caf50;
 
   /* margin-top: 1500px; */
 }

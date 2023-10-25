@@ -3,7 +3,8 @@
 .feedback-container {
   font-family: Arial, sans-serif;
   border: 1px solid #ccc;
-  padding: 20px;
+  /* padding: 20px; */
+  padding: 10px 25px 20px 10px;
   /* background-color: #fff; */
   background-color: #0d5d9a;
   width: 40%;

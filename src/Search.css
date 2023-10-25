@@ -1,58 +1,38 @@
-/* Search.css (or add styles to your existing CSS file) */
-.search {
+/* Search.css */
+
+.search-container {
   display: flex;
   align-items: center;
-
-
-  /* color: white; */
-
-
+  /* padding: 50px 25px 150px; */
+  padding: 100px 25px;
+  background-color: white;
+  width: 41%;
+  margin-left: auto;
 }
 
-.search input {
+.search-container input {
   padding: 5px;
   margin-right: 10px;
-  /* margin-bottom: 10px; */
-  width: 25%;
-  /* background-color: blue; */
-  
-  
-  
+  width: 75%;
+  background-color: white;
 
-  background-color: white; 
   color: #0d5d9a;
-
-
-
-
-  margin-left: auto;
-
-
-
-
+  /* text-align: center; */
 }
 
-.search button {
-  /* background-color: rgb(116, 172, 13); */
-  background-color: white;
-  color: #0d5d9a;
+.search-container button {
+  /* background-color: white; */
+  background-color: #0d5d9a;
+  /* color: #0d5d9a; */
+  color: white;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Add a smooth transition effect */
-  /* margin-bottom: 10px; */
-  width: 18%;
+  transition: background-color 0.3s ease;
+  width: 25%;
 
-  /* Hover styles */
   &:hover {
-    /* background-color: #a9e11b;  */
-    background-color: #0d5d9a;
-    color: white;
+    background-color: white;
+    color: #0d5d9a;
   }
-}
-
-.top-right {
-  position: absolute;
-  top: 20px;
-  right: 20px;
 }
