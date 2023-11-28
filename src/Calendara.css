@@ -1,3 +1,4 @@
+
 /* Calendar.css */
 
 .calendar-container {
@@ -20,11 +21,12 @@
   justify-content: space-between;
   align-items: center;
   height: 40px;
-  /* margin-top: 2410px; */
-  margin-top: 3713px;
+  /* margin-top: 3713px; */
+  margin-top: 3729px;
 
 
-  width: 29.5%;
+  width: 29.5%;  
+  
 }
 
 .calendar-container button {
