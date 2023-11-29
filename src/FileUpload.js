@@ -1,3 +1,39 @@
+// import React, { useState } from 'react';
+// import './FileUpload.css';
+
+// function FileUpload() {
+//   const [selectedFile, setSelectedFile] = useState(null);
+
+//   const handleFileChange = (e) => {
+//     setSelectedFile(e.target.files[0]);
+//   };
+
+//   const handleUpload = () => {
+
+//     if (selectedFile) {
+//       console.log('Uploading file:', selectedFile);
+      
+//     } else {
+//       alert('Please select a file to upload.');
+//     }
+//   };
+
+//   return (
+//     <div className="file-upload-container">
+//       <input type="file" onChange={handleFileChange} />
+//       <button onClick={handleUpload}>Upload</button>
+//     </div>
+//   );
+// }
+
+// export default FileUpload;
+
+
+
+
+
+
+// FileUpload.js
 import React, { useState } from 'react';
 import './FileUpload.css';
 
@@ -9,17 +45,21 @@ function FileUpload() {
   };
 
   const handleUpload = () => {
-    // You can implement your file upload logic here, such as sending the file to a server.
     if (selectedFile) {
-      console.log('Uploading file:', selectedFile);
-      // You can use the 'FormData' API or 'fetch' to send the file to your server.
-      // Example using 'fetch':
-      // const formData = new FormData();
-      // formData.append('file', selectedFile);
-      // fetch('/your-upload-endpoint', {
-      //   method: 'POST',
-      //   body: formData,
-      // });
+      const formData = new FormData();
+      formData.append('file', selectedFile);
+
+      fetch('http://localhost:8080/api/upload', {
+        method: 'POST',
+        body: formData,
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log('File uploaded successfully:', data);
+        })
+        .catch(error => {
+          console.error('Error uploading file:', error);
+        });
     } else {
       alert('Please select a file to upload.');
     }
