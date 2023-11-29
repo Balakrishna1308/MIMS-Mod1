@@ -1,0 +1,49 @@
+/* Tasks.css */
+
+.tasks-container {
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #fff;
+  width: 41%;
+  margin-top: 20px;
+
+
+
+
+  margin-left: auto; 
+
+
+
+  
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;  
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.task-toggle {
+  background-color: #007acc;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.task-toggle:hover {
+  background-color: #00578f;
+}
+

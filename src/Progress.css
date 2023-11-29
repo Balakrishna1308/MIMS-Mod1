@@ -1,0 +1,43 @@
+/* Progress.css */
+
+.progress-container {
+  /* background-color: #f7f7f7; */
+  background-color: #0d5d9a;;
+  border: 1px solid #ddd;
+  /* padding: 10px; */
+  padding: 38px 25px 38px;
+  border-radius: 5px;
+  text-align: center;  
+  width: 41%;    
+
+  color: white;
+
+  
+
+
+
+
+
+
+  /* margin-left: auto; */
+
+
+
+
+  
+}
+
+
+.status {
+  font-weight: bold;
+  color:#4caf50;
+  
+}
+
+.percentage {
+  color: #4caf50;
+}
+
+.progress-heading{
+  color: white;
+}

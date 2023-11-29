@@ -1,0 +1,27 @@
+
+
+/* Progress.css */
+
+.progress-container {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  width: 44%;  
+  
+}
+
+.status {
+  font-weight: bold;
+  color: #007acc;
+}
+
+.percentage {
+  color: #4caf50;
+}
+
+
+=====================
+
+
