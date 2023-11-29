@@ -1,0 +1,249 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <title>Trainee List</title>-->
+<!--  <style>-->
+<!--    /* Your existing styles here */-->
+
+<!--    .myElement {-->
+<!--      text-align: center;-->
+<!--    }-->
+
+<!--    /* Add style for checkboxes */-->
+<!--    .checkbox-cell {-->
+<!--      text-align: center;-->
+<!--    }-->
+
+<!--    .checkbox-cell input[type="checkbox"] {-->
+<!--      transform: scale(1.5); /* Increase checkbox size */-->
+<!--    }-->
+
+<!--    footer {-->
+<!--      text-align: center;-->
+<!--      margin-top: 20px;-->
+<!--      color: #777; /* Change the color to your preference */-->
+<!--    }-->
+
+<!--    .center {-->
+<!--      margin-left: auto;-->
+<!--      margin-right: auto;-->
+<!--    }-->
+
+<!--    .action-buttons {-->
+<!--      text-align: center;-->
+<!--      margin-top: 20px;-->
+<!--    }-->
+
+<!--    /* Style for the Print button */-->
+<!--    .print-button {-->
+<!--      background-color: #007bff;-->
+<!--      color: #fff;-->
+<!--      border: none;-->
+<!--      border-radius: 5px;-->
+<!--      padding: 10px 20px;-->
+<!--      cursor: pointer;-->
+<!--      transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;-->
+<!--      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);-->
+<!--    }-->
+
+<!--    /* Add hover effect for the Print button */-->
+<!--    .print-button:hover {-->
+<!--      background-color: #0056b3;-->
+<!--      transform: scale(1.05);-->
+<!--      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);-->
+<!--    }-->
+
+<!--    /* Style for the Delete button */-->
+<!--    .delete-button {-->
+<!--      background-color: #dc3545;-->
+<!--      color: #fff;-->
+<!--      border: none;-->
+<!--      border-radius: 5px;-->
+<!--      padding: 10px 20px;-->
+<!--      cursor: pointer;-->
+<!--      transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;-->
+<!--      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);-->
+<!--    }-->
+
+<!--    /* Add hover effect for the Delete button */-->
+<!--    .delete-button:hover {-->
+<!--      background-color: #c82333;-->
+<!--      transform: scale(1.05);-->
+<!--      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);-->
+<!--    }-->
+<!--  </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h2 class="myElement">Trainee List</h2>-->
+
+<!--<table class="center" border="1">-->
+<!--  <tr>-->
+<!--    <th>Trainee ID</th>-->
+<!--    <th>Trainee Name</th>-->
+<!--    <th>Course Name</th>-->
+<!--    <th>Internship Domain</th>-->
+<!--    <th>College Name</th>-->
+<!--    <th>Contact Number</th>-->
+<!--    <th>Email</th>-->
+<!--    <th>Select</th>-->
+<!--  </tr>-->
+<!--  <tr th:each="trainee : ${trainees}">-->
+<!--    <td th:text="${trainee.traineeId}"></td>-->
+<!--    <td th:text="${trainee.traineeName}"></td>-->
+<!--    <td th:text="${trainee.courseName}"></td>-->
+<!--    <td th:text="${trainee.internshipDomain}"></td>-->
+<!--    <td th:text="${trainee.collegeName}"></td>-->
+<!--    <td th:text="${trainee.contactNumber}"></td>-->
+<!--    <td th:text="${trainee.email}"></td>-->
+<!--    <td class="checkbox-cell">-->
+<!--      <input class="trainee-checkbox" type="checkbox" data-trainee-id="${trainee.id}" name="selectedTrainees" value="${trainee.id}">-->
+<!--    </td>-->
+<!--  </tr>-->
+<!--</table>-->
+
+<!--<div class="action-buttons">-->
+<!--  <button class="print-button" id="printCertificates">Print Certificates</button>-->
+<!--  <button class="delete-button" id="deleteSelected">Delete Selected</button>-->
+<!--</div>-->
+
+<!--<footer>-->
+<!--  &copy; 2023 Myshow4all. All Rights Reserved.-->
+<!--</footer>-->
+
+
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Trainee List</title>
+  <style>
+    /* Your existing styles here */
+
+    .myElement {
+      text-align: center;
+    }
+
+    /* Add style for checkboxes */
+    .checkbox-cell {
+      text-align: center;
+    }
+
+    .checkbox-cell input[type="checkbox"] {
+      transform: scale(1.5); /* Increase checkbox size */
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #777; /* Change the color to your preference */
+    }
+
+    .center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .action-buttons {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    /* Style for the Print button */
+    .print-button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Add hover effect for the Print button */
+    .print-button:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Style for the Delete button */
+    .delete-button {
+      background-color: #dc3545;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Add hover effect for the Delete button */
+    .delete-button:hover {
+      background-color: #c82333;
+      transform: scale(1.05);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+<h2 class="myElement">Trainee List</h2>
+
+<table class="center" border="1">
+  <tr>
+    <th>Trainee ID</th>
+    <th>Trainee First Name</th>
+    <th>Trainee Last Name</th>
+    <th>Course Name</th>
+    <th>Internship Domain</th>
+    <th>College Name</th>
+    <th>Contact Number</th>
+    <th>Email</th>
+    <th>Select</th>
+  </tr>
+  <tr th:each="trainee : ${trainees}">
+    <td th:text="${trainee.traineeId}"></td>
+    <td th:text="${trainee.traineeFirstName}"></td>
+    <td th:text="${trainee.traineeLastName}"></td>
+    <td th:text="${trainee.courseName}"></td>
+    <td th:text="${trainee.internshipDomain}"></td>
+    <td th:text="${trainee.collegeName}"></td>
+    <td th:text="${trainee.contactNumber}"></td>
+    <td th:text="${trainee.email}"></td>
+    <td class="checkbox-cell">
+      <input class="trainee-checkbox" type="checkbox" data-trainee-id="${trainee.id}" name="selectedTrainees" value="${trainee.id}">
+    </td>
+  </tr>
+</table>
+
+<div class="action-buttons">
+  <button class="print-button" id="printCertificates">Print Certificates</button>
+  <button class="delete-button" id="deleteSelected">Delete Selected</button>
+</div>
+
+<footer>
+  &copy; 2023 Myshow4all. All Rights Reserved.
+</footer>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+

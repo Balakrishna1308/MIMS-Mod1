@@ -1,0 +1,71 @@
+
+        /* II - CSS styling for the body element */
+        body
+        {
+            /* 3A -  Use flexbox to align content vertically in the center */
+            display: flex;
+
+            /* 4A - Stack elements vertically */
+            flex-direction: column;
+
+
+            /* 5A - Vertically center content */
+            justify-content: center;
+
+
+            /* 6 - Horizontally center content */
+            align-items: center;
+
+
+            /* 7 - Ensure a minimum height of the viewport */
+            /* min-height: 100vh; means that you are setting the minimum height of
+             the body element to be 100% of the viewport's height */
+            min-height: 100vh;
+
+
+            /* 2 - Remove default margin */
+            margin: 0;
+
+            /* 1- Set the background color to bisque */
+            background-color: bisque;
+
+        }
+
+
+        /* III- CSS styling for elements with the class "content" */
+        .content {
+            /* 1-  Center text horizontally within its container */
+            text-align: center;
+
+            /* 2- Set the text color to green */
+            color: green;
+
+            /* 3 - Add margin at the bottom to create spacing */
+            margin-bottom: 20px;
+
+        }
+
+
+        /* I - CSS styling for the footer element */
+        footer {
+            /* 6 -  Center text horizontally within its container */
+            text-align: center;
+
+
+            /* 3 - Set the background color to pink */
+            background-color: pink;
+
+
+            /* 5 - Add padding around the footer content */
+            padding: 10px;
+
+
+            /* 4- Ensure the footer spans the full width of the viewport */
+            width: 100%;
+
+            /* 1 and 2 - Make the position fixed and position the footer at the bottom of the viewport*/
+            position: fixed;
+            bottom: 0;
+
+        }
+
