@@ -130,7 +130,7 @@
 
 
 
-
+// Search.js
 // import React, { useState } from 'react';
 // import './Search.css';
 
@@ -188,20 +188,20 @@
 
 
 import React, { useState, useEffect } from 'react';
+import './Search.css';
 
 function FeedbackComponent() {
     const [feedbackList, setFeedbackList] = useState([]);
 
     useEffect(() => {
-        // Fetch feedback data from your Spring Boot API
+        
         fetch('http://localhost:8080/api/feedback/getAll')
             .then(response => response.json())
             .then(data => setFeedbackList(data))
             .catch(error => console.error('Error fetching feedback:', error));
-    }, []); // Empty dependency array ensures the effect runs once when the component mounts
-
+    }, []); 
     return (
-        <div>
+        <div>   
             <h2>Feedback List</h2>
             <ul>
                 {feedbackList.map(feedback => (
@@ -213,3 +213,4 @@ function FeedbackComponent() {
 }
 
 export default FeedbackComponent;
+
