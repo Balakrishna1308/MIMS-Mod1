@@ -257,6 +257,9 @@ function Search(props) {
             <button onClick={handleSearch}>Search</button>
 
             {/* Display the search results */}
+            {/* Display the search results */}
+            
+
             <div className="search-results">
                 {searchResults.map(item => (
                     <div key={item.id}>{item.title}</div>
