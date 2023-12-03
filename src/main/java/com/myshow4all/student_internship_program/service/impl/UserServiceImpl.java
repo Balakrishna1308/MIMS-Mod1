@@ -33,12 +33,23 @@ public class UserServiceImpl implements UserService {
         return optionalUser.isPresent() && optionalUser.get().getPassword().equals(password);
     }
 
+
+
+
+
+
+
     @Override
     public User loginUser(String username, String password) {
         // Implement your logic for validating login credentials
         // For example, you can query the database to find a user with the given username and password
         return userRepository.findByUsernameAndPassword(username, password);
     }
+
+
+
+
+
 
 
     @Override
@@ -57,6 +68,24 @@ public class UserServiceImpl implements UserService {
         // Save the user to the database
         return userRepository.save(newUser);
     }
+
+
+
+//    // UserServiceImpl.java
+//    @Override
+//    public User loginUser(String username, String password) {
+//        Optional<User> optionalUser = userRepository.findByUsername(username);
+//
+//        if (optionalUser.isPresent()) {
+//            User user = optionalUser.get();
+//            if (passwordEncoder.matches(password, user.getPassword())) {
+//                return user;
+//            }
+//        }
+//
+//        return null; // Login failed
+//    }
+
 
 
 }
