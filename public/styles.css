@@ -150,5 +150,8 @@ footer {
   bottom: 0;
   width: 100%;
   /* position: absolute; */
-  position: inherit;
+  /* position: inherit; */
+  position: fixed;
+
+
 }
