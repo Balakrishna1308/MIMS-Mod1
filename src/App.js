@@ -119,6 +119,7 @@ function App() {
       {authenticated ? (
         // Render Dashboard if authenticated
         <>
+          <FileUpload/>
           <Search />
           <Progress status="In Progress" percentage={75} />
           <Tasks />

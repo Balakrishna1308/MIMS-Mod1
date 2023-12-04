@@ -8,7 +8,8 @@
   background-color: #fff;
   /* background-color: #0d5d9a; */
   /* color: white; */
-  width: 40%;
+  /* width: 40%; */
+  width: 70%;
   margin-top: 20px; /* Adjust the margin as needed */
 
   /* Center the content within the container */
@@ -19,6 +20,15 @@
 
   margin-left: auto;
   color: #00578f;
+
+
+
+
+  margin-right: -30%;
+
+
+
+  
 }
 
 

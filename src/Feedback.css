@@ -7,7 +7,9 @@
   padding: 10px 25px 20px 10px;
   /* background-color: #fff; */
   background-color: #0d5d9a;
-  width: 40%;
+  /* width: 40%; */ 
+  width: 70%;
+
   margin-top: 20px; /* Adjust the margin as needed */
 
   /* Center the content within the container */
@@ -22,6 +24,9 @@
   /* margin-left: auto; */
 
 
+
+
+  margin-left: -30%;
 
   
 }
