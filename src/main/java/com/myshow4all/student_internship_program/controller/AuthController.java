@@ -8,6 +8,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
 // AuthController.java
 @RestController
 @RequestMapping("/api/auth")
@@ -16,17 +20,35 @@ public class AuthController {
     @Autowired
     private UserService userService;
 
+//    @PostMapping("/login")
+//    public ResponseEntity<String> login(@RequestBody LoginRequest loginRequest) {
+//        String username = loginRequest.getUsername();
+//        String password = loginRequest.getPassword();
+//
+//        if (userService.validateUser(username, password)) {
+//            return ResponseEntity.ok("Login successful");
+//        } else {
+//            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+//        }
+//    }
+
+
+
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody LoginRequest loginRequest) {
+    public ResponseEntity<Map<String, String>> login(@RequestBody LoginRequest loginRequest) {
         String username = loginRequest.getUsername();
         String password = loginRequest.getPassword();
 
         if (userService.validateUser(username, password)) {
-            return ResponseEntity.ok("Login successful");
+            // Return a JSON object with a token
+            Map<String, String> response = new HashMap<>();
+            response.put("token", "yourAuthToken");
+            return ResponseEntity.ok(response);
         } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Collections.singletonMap("error", "Invalid credentials"));
         }
     }
+
 
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody LoginRequest loginRequest) {
