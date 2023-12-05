@@ -3,9 +3,9 @@ import './Tasks.css'; // Import the CSS file
 
 function Tasks() {
   const [tasks, setTasks] = useState([
-    { id: 1, description: 'Complete Module 1', completed: false },
-    { id: 2, description: 'Review trainee project', completed: false },
-    { id: 3, description: 'Prepare presentation', completed: false },
+    { id: 1, description: 'Task 1: Enrolment-form-success page', completed: false },
+    { id: 2, description: 'Task 2: Enrolment-form page', completed: false },
+    { id: 3, description: 'Task 3: Trainee-joining-details page', completed: false },
   ]);
 
   const handleTaskToggle = (taskId) => {
