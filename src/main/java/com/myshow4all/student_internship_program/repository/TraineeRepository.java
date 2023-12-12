@@ -6,8 +6,9 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
 
-public interface TraineeRepository extends JpaRepository<Trainee, Long>
-{
+public interface TraineeRepository extends JpaRepository<Trainee, Long> {
+    Optional<Trainee> findByTraineeId(String traineeId);
+
 
 }
 

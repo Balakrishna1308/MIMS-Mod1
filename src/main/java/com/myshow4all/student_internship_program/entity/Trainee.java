@@ -354,6 +354,13 @@ public class Trainee
         }
     }
 
+    public Object getFromDate() {
+        return null;
+    }
+
+    public Object getToDate() {
+        return null;
+    }
 }
 
 
