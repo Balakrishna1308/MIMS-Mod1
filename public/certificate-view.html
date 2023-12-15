@@ -1,3 +1,115 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate of Internship</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .certificate {
+            max-width: 450px; 
+            max-height: fit-content;    
+            margin: 0 auto;
+            padding: 60px 40px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-image: url('Images/misc/certificate.jpg'); /* Use a relative path to your image */
+            
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 400px; 
+
+            
+        }
+
+        h1, h5 {
+            text-align: center;
+            
+            color: rgb(116, 101, 101);
+            
+            margin-bottom: 10px;
+        }
+
+        p {
+            text-align: left;
+            
+            color: rgb(116, 101, 101);
+            font-style: italic;
+            margin: 5px 0;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+        
+    <div class="certificate" id="certificate">
+      <h1>Certificate of Internship</h1>
+        <h5>Submitted on: July 30, 2023</h5>
+        <br>
+        <p>This certificate is awarded to <span id="studentName">John Doe</span> </p>
+        <br>
+        <p> He/She has completed the internship program for the role of HR under the 
+          guidance of Mr P N Vamsi Kiran from date 03 April 2023 to 16 July 2023.</p>
+        <br>
+        <p> He/She is found to be hardworking and sincere. We wish him/her best of luck for 
+          the future.</p>  
+        <br>  
+        
+        <p style="font-weight: bold;">For MINUNSHOW4ALL VENTURES PVT LTD, </p>
+        <br>
+        <p style="font-weight: bold;">Authorized Signatory,</p>          
+    </div> -->
+
+
+
+
+
+    <!-- <button id="printButton">Generate Certificate</button> -->
+
+
+
+
+
+    <!-- <script>
+        const printButton = document.getElementById('printButton');
+        printButton.addEventListener('click', function () {
+            const certificate = document.getElementById('certificate').outerHTML;
+            const newWindow = window.open('', '_blank', 'width=600,height=400');
+            newWindow.document.write('<html><head><title>Certificate</title></head><body>');
+            newWindow.document.write(certificate);
+            newWindow.document.write('</body></html>');
+            newWindow.document.close();
+            newWindow.print();
+        });
+    </script>
+</body>
+</html> -->
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,34 +130,20 @@
             padding: 60px 40px;
             border: 1px solid #ccc;
             border-radius: 10px;
-            /* background-image: url(C:/All/Test/Test2/Images/misc/certificate.jpg);  */
-            background-image: url('Images/misc/certificate.jpg'); /* Use a relative path to your image */
-            /* background-size: cover; */
+            background-image: url('Images/misc/certificate.jpg'); 
             background-repeat: no-repeat;
             background-position: center;
             background-size: 400px; 
-
-            /* background-color: #b8abab; */
-
-
-            /* background-image: url('your-image.jpg'); */
-            /* background-size: cover;  */
-            /* background-repeat: no-repeat; */
-            /* background-attachment: fixed;  */
-            /* background-position: center; */
         }
 
         h1, h5 {
             text-align: center;
-            /* color: #4595B8; */
             color: rgb(116, 101, 101);
-            /* font-style: italic; */
             margin-bottom: 10px;
         }
 
         p {
             text-align: left;
-            /* color: #4595B8; */
             color: rgb(116, 101, 101);
             font-style: italic;
             margin: 5px 0;
@@ -73,12 +171,12 @@
         
     <div class="certificate" id="certificate">
       <h1>Certificate of Internship</h1>        
-        <h5>Submitted on: July 30, 2023</h5>
+        <h5>Submitted on: <span id="submittedOn">[Submitted On]</span></h5>
         <br>
-        <p>This certificate is awarded to <span id="studentName">John Doe</span> </p>
+        <p>This certificate is awarded to <span id="studentName">[Student Name]</span> </p>
         <br>
-        <p> He/She has completed the internship program for the role of HR under the 
-          guidance of Mr P N Vamsi Kiran from date 03 April 2023 to 16 July 2023.</p>
+        <p> He/She has completed the internship program for the role of <span id="role">[Role]</span> under the 
+          guidance of <span id="guide">[Guide]</span> from date <span id="fromDate">[From Date]</span> to <span id="toDate">[To Date]</span>.</p>
         <br>
         <p> He/She is found to be hardworking and sincere. We wish him/her best of luck for 
           the future.</p>  
@@ -89,19 +187,46 @@
         <p style="font-weight: bold;">Authorized Signatory,</p>          
     </div>
 
-    <!-- <button id="printButton">Generate Certificate</button> -->
+    
 
-    <script>
-        const printButton = document.getElementById('printButton');
-        printButton.addEventListener('click', function () {
-            const certificate = document.getElementById('certificate').outerHTML;
-            const newWindow = window.open('', '_blank', 'width=600,height=400');
-            newWindow.document.write('<html><head><title>Certificate</title></head><body>');
-            newWindow.document.write(certificate);
-            newWindow.document.write('</body></html>');
-            newWindow.document.close();
-            newWindow.print();
-        });
-    </script>
+
+
+    <button id="viewCertificateButton">View Certificate</button>
+
+<script>
+    const viewCertificateButton = document.getElementById('viewCertificateButton');
+    viewCertificateButton.addEventListener('click', async function () {
+        // Use an AJAX request to fetch the certificate details from the server
+        try {
+            const response = await fetch('http://localhost:8080/api/certificate/details'); // Replace with your actual endpoint
+            if (response.ok) {
+                const certificateDetails = await response.json();
+
+                // Update the placeholders with fetched data
+                document.getElementById('studentName').textContent = certificateDetails.traineeFirstName + ' ' + certificateDetails.traineeLastName;
+                document.getElementById('role').textContent = certificateDetails.courseName;
+                document.getElementById('guide').textContent = certificateDetails.internshipDomain;
+                document.getElementById('fromDate').textContent = certificateDetails.fromDate;
+                document.getElementById('toDate').textContent = certificateDetails.toDate;
+
+                // Open a new window to display the certificate
+                const certificate = document.getElementById('certificate').outerHTML;
+                const newWindow = window.open('', '_blank', 'width=600,height=400');
+                newWindow.document.write('<html><head><title>Certificate</title></head><body>');
+                newWindow.document.write(certificate);
+                newWindow.document.write('</body></html>');
+                newWindow.document.close();
+            } else {
+                console.error('Failed to fetch certificate details');
+            }
+        } catch (error) {
+            console.error('Error during fetch:', error);
+        }
+    });
+</script>
+
+
+
+
 </body>
 </html>

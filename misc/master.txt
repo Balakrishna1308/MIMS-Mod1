@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 This is a master branch
+=======
+This is a master branch
+>>>>>>> 82a66254b7bba3eaf5888ce5415d1c3e2e966bd4
