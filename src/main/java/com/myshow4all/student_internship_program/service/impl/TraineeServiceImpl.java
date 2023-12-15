@@ -93,6 +93,19 @@ public class TraineeServiceImpl implements TraineeService {
         }
     }
 
+    @Override
+    public Trainee getTraineeDetails() {
+        // For simplicity, let's assume you want to get details of the first trainee
+        Optional<Trainee> traineeOptional = traineeRepository.findById(1L); // Assuming 1L is the ID of the trainee you want
+
+        return traineeOptional.orElse(null);
+    }
+
+      public Trainee getTraineeDetailsById(Long traineeId) {
+        Optional<Trainee> traineeOptional = traineeRepository.findByTraineeId(String.valueOf(traineeId));
+
+        return traineeOptional.orElse(null);
+    }
 
 
 }
