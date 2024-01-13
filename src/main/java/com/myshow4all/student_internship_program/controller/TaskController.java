@@ -16,7 +16,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/tasks")
+//@RequestMapping("/api/tasks")
+@RequestMapping("/api/v1/tasks")
 @CrossOrigin(origins = "http://localhost:3000") // Replace with the actual URL of your ReactJS app
 public class TaskController {
 
