@@ -14,7 +14,8 @@ import java.util.Map;
 
 // AuthController.java
 @RestController
-@RequestMapping("/api/auth")
+//@RequestMapping("/api/auth")
+@RequestMapping("/api/v1/auth")
 @CrossOrigin(origins = "http://localhost:3000")
 public class AuthController {
     @Autowired
