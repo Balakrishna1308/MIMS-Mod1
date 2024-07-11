@@ -15,6 +15,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/trainees")
+
 public class TraineeController {
 
     @Autowired

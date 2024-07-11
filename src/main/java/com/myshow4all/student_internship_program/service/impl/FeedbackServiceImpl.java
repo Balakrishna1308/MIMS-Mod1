@@ -19,10 +19,27 @@ public class FeedbackServiceImpl implements FeedbackService {
         return feedbackRepository.findAll();
     }
 
-    @Override
-    public void saveFeedback(Feedback feedback) {
 
+
+//    @Override
+//    public void saveFeedback(Feedback feedback) {
+//
+//    }
+
+        @Override
+        public void saveFeedback(Feedback feedback) {
+        try {
+            System.out.println("Saving feedback: " + feedback.getContent());
+
+            feedbackRepository.save(feedback);
+
+            System.out.println("Feedback saved successfully!");
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error saving feedback: " + e.getMessage());
+        }
     }
+
 
     // Implement additional methods as needed, e.g., getByUserId, getByDateRange, etc.
 }
