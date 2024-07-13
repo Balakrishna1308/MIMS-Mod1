@@ -32,7 +32,8 @@ public class TraineeController {
     @Operation
        (
           summary = "Save Trainee REST API",
-          description = "Save Trainee REST API is used to save the trainee details into database"
+          description = "Save Trainee REST API is used to save the trainee details into database" +
+                        "and let the enrolment get done"
        )
     @ApiResponses
        (
