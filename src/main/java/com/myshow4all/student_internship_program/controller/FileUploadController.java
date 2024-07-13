@@ -1,4 +1,8 @@
 package com.myshow4all.student_internship_program.controller;//package com.myshow4all.student_internship_program.controller;// FileUploadController.java
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -38,9 +42,27 @@ import java.nio.file.StandardCopyOption;
 @RestController
 //@RequestMapping("/api")
 @RequestMapping("/api/v1")
+@Tag
+        (
+            name = "CRUD REST APIs for FileEntity Resource"
+        )
+
 public class FileUploadController {
 
     @PostMapping("/upload")
+    @Operation
+            (
+                    summary = "File Upload REST API",
+                    description = "File Upload REST API is used to upload the file into the database"
+            )
+    @ApiResponses
+            (
+                     value = @ApiResponse
+                                     (responseCode = "200",
+                                             description = "HTTP Status 200, OK - File uploaded successfully"
+                                     )
+
+            )
     public ResponseEntity<String> handleFileUpload(@RequestParam("file") MultipartFile file) {
         try {
             // Get the file bytes
