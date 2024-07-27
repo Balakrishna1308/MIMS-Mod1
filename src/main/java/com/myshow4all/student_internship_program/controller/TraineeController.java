@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/trainees")
@@ -39,7 +40,7 @@ public class TraineeController {
        (
           @ApiResponse
             (
-                responseCode = "200",
+                responseCode = "201",
                 description = "Trainee saved successfully"
             )
        )
@@ -55,7 +56,8 @@ public class TraineeController {
         try {
             traineeService.saveTrainee(trainee);
             // Return success message in response body
-            return ResponseEntity.ok("Trainee saved successfully!");
+//            return ResponseEntity.ok("Trainee saved successfully!");
+            return new ResponseEntity<>("Enrolment done", HttpStatus.CREATED);
         } catch (Exception e) {
             // Return error message in response body
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -109,6 +111,7 @@ public class TraineeController {
         try {
             traineeService.deleteSelectedTrainees(traineeIds);
             return ResponseEntity.ok("Selected trainees deleted successfully.");
+//            return new ResponseEntity<>("Selected trainee deleted", HttpStatus.NO_CONTENT);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error deleting trainees: " + e.getMessage());
         }
@@ -120,4 +123,46 @@ public class TraineeController {
 //        return "success";
         return "enrolment-form-success";
     }
+
+
+
+
+
+
+
+//    @GetMapping("/trainee-list/domain/{domain}")
+////    public ResponseEntity<List<Trainee>> listTraineesByDomain(@PathVariable String domain) {
+//    public ResponseEntity<?> listTraineesByDomain(@PathVariable String domain) {
+//        List<Trainee> trainees = traineeService.getAllTrainees()
+//                .stream()
+//                .filter(trainee -> domain.equals(trainee.getInternshipDomain()))
+//                .collect(Collectors.toList());
+//        if (trainees.isEmpty()) {
+////            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Trainee not found");
+//        }
+//
+//         else {
+//            return ResponseEntity.ok(trainees);
+//        }
+//    }
+
+
+
+
+        @GetMapping("trainee-list/domain/{domain}")
+        public ResponseEntity<?> getTraineesByDomain(@PathVariable String domain)
+        {
+            List<Trainee> listOfTrainees = traineeService.getAllTrainees();
+            List<Trainee> listOfTraineesByDomain = listOfTrainees
+                                                   .stream()
+                                                   .filter(trainee -> domain.equals(trainee.getInternshipDomain()))
+                                                   .collect(Collectors.toList());
+
+            if(listOfTraineesByDomain.isEmpty())
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Trainee not found - Wrong domain");
+            else
+                return ResponseEntity.ok(listOfTraineesByDomain);
+        }
+
 }

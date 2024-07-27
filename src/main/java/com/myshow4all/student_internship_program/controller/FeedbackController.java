@@ -198,6 +198,7 @@ public class FeedbackController {
             System.out.println("Feedback saved successfully!");
 
             return ResponseEntity.ok("Feedback submitted successfully!");
+
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(500).body("Error submitting feedback: " + e.getMessage());
@@ -212,7 +213,7 @@ public class FeedbackController {
                     @ApiResponse
                     (
                        responseCode = "200",
-                       description = "HTTP status code 200, OK"
+                       description = "HTTP status code 200, OK - Fetched all the feedbacks"
 
                     )
 

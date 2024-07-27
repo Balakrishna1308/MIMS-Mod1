@@ -17,5 +17,15 @@ public class Task {
 
     private boolean completed;
 
-    // Getters and setters...
+    // Constructors, getters, setters...
+
+
+    public Task(Long id, String description, boolean completed) {
+        this.id = id;
+        this.description = description;
+        this.completed = completed;
+    }
+
+    public Task() {
+    }
 }

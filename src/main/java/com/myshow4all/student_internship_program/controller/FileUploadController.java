@@ -75,6 +75,7 @@ public class FileUploadController {
             Files.write(path, bytes);
 
             return new ResponseEntity<>("File uploaded successfully", HttpStatus.OK);
+
         } catch (IOException e) {
             return new ResponseEntity<>("Failed to upload file", HttpStatus.INTERNAL_SERVER_ERROR);
         }

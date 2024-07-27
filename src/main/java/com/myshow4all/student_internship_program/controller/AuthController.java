@@ -80,8 +80,8 @@ public class AuthController {
                     description = "Register User RESP API is used to register the new user",
                     responses = @ApiResponse
                             (
-                                    responseCode = "201",
-                                    description = "HTTP Status code 201, created - new user " +
+                                    responseCode = "200",
+                                    description = "HTTP Status code 200, OK - new user " +
                                                    "created successfully!"
                             )
             )
@@ -94,6 +94,14 @@ public class AuthController {
         } else {
             userService.registerUser(username, password);
             return ResponseEntity.ok("Registration successful");
+
         }
     }
-}
+
+    }
+
+
+
+
+
+
