@@ -55,10 +55,13 @@ import com.myshow4all.student_internship_program.entity.Trainee;
 import com.myshow4all.student_internship_program.repository.TraineeRepository;
 import com.myshow4all.student_internship_program.service.TraineeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
+import java.util.stream.Collectors;
 
 @Service
 public class TraineeServiceImpl implements TraineeService {
@@ -67,45 +70,102 @@ public class TraineeServiceImpl implements TraineeService {
     private TraineeRepository traineeRepository;
 
     @Override
-    public List<Trainee> getAllTrainees() {
-        return traineeRepository.findAll();
+    @Async
+    public CompletableFuture<Void> saveTrainee(Trainee trainee) {
+
+        traineeRepository.save(trainee);
+//        return CompletableFuture.completedFuture(null);
+        return CompletableFuture.completedFuture(null);
     }
 
     @Override
-    public Optional<Trainee> getTraineeById(Long traineeId) {
-        return traineeRepository.findById(traineeId);
+    @Async
+    public CompletableFuture<List<Trainee>> getAllTrainees() {
+
+        return CompletableFuture.completedFuture(traineeRepository.findAll());
+
     }
 
     @Override
-    public Trainee saveTrainee(Trainee trainee) {
-        return traineeRepository.save(trainee);
+    @Async
+    public CompletableFuture<Trainee> getTraineeById(Long traineeId) {
+
+        return null;
     }
 
     @Override
-    public void deleteTrainee(Long traineeId) {
-        traineeRepository.deleteById(traineeId);
+    @Async
+    public CompletableFuture<List<Trainee>> getTraineesByDomain(String domain) {
+
+       List<Trainee> listOfTraineesByDomain = traineeRepository.findAll()
+                .stream()
+                .filter(dom -> domain.equals(dom.getInternshipDomain()))
+                .collect(Collectors.toList());
+        return CompletableFuture.completedFuture(listOfTraineesByDomain);
     }
 
     @Override
-    public void deleteSelectedTrainees(List<Long> traineeIds) {
-        for (Long traineeId : traineeIds) {
-            traineeRepository.deleteById(traineeId);
-        }
+    @Async
+    public CompletableFuture<Void> deleteSelectedTrainee(Long traineeId) {
+        return null;
     }
 
     @Override
-    public Trainee getTraineeDetails() {
-        // For simplicity, let's assume you want to get details of the first trainee
-        Optional<Trainee> traineeOptional = traineeRepository.findById(1L); // Assuming 1L is the ID of the trainee you want
+    @Async
+    public CompletableFuture<Void> deleteSelectedTrainees(List<Long> traineeIds) {
 
-        return traineeOptional.orElse(null);
+    traineeRepository.deleteAllById(traineeIds);
+
+    return CompletableFuture.completedFuture(null);
+
     }
 
-      public Trainee getTraineeDetailsById(Long traineeId) {
-        Optional<Trainee> traineeOptional = traineeRepository.findByTraineeId(String.valueOf(traineeId));
 
-        return traineeOptional.orElse(null);
-    }
+
+
+
+//    @Override
+////    public List<Trainee> getAllTrainees() {
+////        return traineeRepository.findAll();
+////    }
+//
+//    @Override
+//    public Optional<Trainee> getTraineeById(Long traineeId) {
+//        return traineeRepository.findById(traineeId);
+//    }
+//
+//    @Override
+//    public Trainee saveTrainee(Trainee trainee) {
+//        return traineeRepository.save(trainee);
+//    }
+//
+//    @Override
+//    public void deleteTrainee(Long traineeId) {
+//        traineeRepository.deleteById(traineeId);
+//    }
+//
+//    @Override
+//    public void deleteSelectedTrainees(List<Long> traineeIds) {
+//        for (Long traineeId : traineeIds) {
+//            traineeRepository.deleteById(traineeId);
+//        }
+//    }
+//
+//    @Override
+//    public Trainee getTraineeDetails() {
+//        // For simplicity, let's assume you want to get details of the first trainee
+//        Optional<Trainee> traineeOptional = traineeRepository.findById(1L); // Assuming 1L is the ID of the trainee you want
+//
+//        return traineeOptional.orElse(null);
+//    }
+//
+//      public Trainee getTraineeDetailsById(Long traineeId) {
+//        Optional<Trainee> traineeOptional = traineeRepository.findByTraineeId(String.valueOf(traineeId));
+//
+//        return traineeOptional.orElse(null);
+//    }
+
+
 
 
 }
