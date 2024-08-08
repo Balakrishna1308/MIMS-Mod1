@@ -54,6 +54,7 @@ package com.myshow4all.student_internship_program.service.impl;
 import com.myshow4all.student_internship_program.entity.Trainee;
 import com.myshow4all.student_internship_program.repository.TraineeRepository;
 import com.myshow4all.student_internship_program.service.TraineeService;
+import com.myshow4all.student_internship_program.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -61,6 +62,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 @Service
@@ -97,11 +99,25 @@ public class TraineeServiceImpl implements TraineeService {
     @Async
     public CompletableFuture<List<Trainee>> getTraineesByDomain(String domain) {
 
-       List<Trainee> listOfTraineesByDomain = traineeRepository.findAll()
-                .stream()
-                .filter(dom -> domain.equals(dom.getInternshipDomain()))
-                .collect(Collectors.toList());
-        return CompletableFuture.completedFuture(listOfTraineesByDomain);
+        //First approach
+//        Predicate<Trainee> byDomain = trainee -> domain.equals(trainee.getInternshipDomain());
+//        List<Trainee> listOfTrainees = traineeRepository.findAll();
+//        List<Trainee>listOfTraineesByDomain = listOfTrainees.stream().filter(byDomain).collect(Collectors.toList());
+//        return CompletableFuture.completedFuture(listOfTraineesByDomain);
+
+
+
+        //Second approach
+//       List<Trainee> listOfTraineesByDomain = traineeRepository.findAll()
+//                .stream()
+//                .filter(trainee -> domain.equals(trainee.getInternshipDomain()))
+//                .collect(Collectors.toList());
+//        return CompletableFuture.completedFuture(listOfTraineesByDomain);
+
+
+        //Third approach
+        List<Trainee> listOfTrainees = traineeRepository.findAll();
+        return CompletableFuture.completedFuture(Utils.filterList(listOfTrainees, trainee->domain.equals(trainee.getInternshipDomain())));
     }
 
     @Override

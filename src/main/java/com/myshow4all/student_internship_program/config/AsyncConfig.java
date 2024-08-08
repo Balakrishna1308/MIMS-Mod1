@@ -7,22 +7,49 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 import java.util.concurrent.Executor;
 
+//@Configuration
+//@EnableAsync
+//public class AsyncConfig {
+//
+//    @Bean(name ="taskExecutor")
+//    public Executor taskExecutor()
+//    {
+//        ThreadPoolTaskExecutor threadPoolTaskExecutor =
+//                new ThreadPoolTaskExecutor();
+//
+//        threadPoolTaskExecutor.setCorePoolSize(2);
+//        threadPoolTaskExecutor.setMaxPoolSize(5);
+//        threadPoolTaskExecutor.setQueueCapacity(500);
+//        threadPoolTaskExecutor.setThreadNamePrefix("Async-");
+//        threadPoolTaskExecutor.initialize();
+//        return  threadPoolTaskExecutor;
+//    }
+//
+//}
+
+
 @Configuration
 @EnableAsync
-public class AsyncConfig {
+public class AsyncConfig{
 
-    @Bean(name ="taskExecutor")
-    public Executor taskExecutor()
-    {
-        ThreadPoolTaskExecutor threadPoolTaskExecutor =
-                new ThreadPoolTaskExecutor();
 
-        threadPoolTaskExecutor.setCorePoolSize(2);
-        threadPoolTaskExecutor.setMaxPoolSize(5);
-        threadPoolTaskExecutor.setQueueCapacity(500);
-        threadPoolTaskExecutor.setThreadNamePrefix("Async-");
-        threadPoolTaskExecutor.initialize();
-        return  threadPoolTaskExecutor;
-    }
-
+        @Bean(name = "taskExecutor")
+        public Executor taskExecutor()
+        {
+            ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
+            threadPoolTaskExecutor.setCorePoolSize(2);
+            threadPoolTaskExecutor.setMaxPoolSize(5);
+            threadPoolTaskExecutor.setQueueCapacity(500);
+            threadPoolTaskExecutor.setThreadNamePrefix("Async-");
+            threadPoolTaskExecutor.initialize();
+            return threadPoolTaskExecutor;
+        }
 }
+
+
+
+
+
+
+
+
