@@ -116,29 +116,32 @@ import java.util.Map;
 
 
 
-@RestController
-//@RequestMapping("/api/feedback")
-@RequestMapping("/api/v1/feedback")
-
-//@CrossOrigin(origins = "http://localhost:3000") // Replace with the actual URL of your ReactJS
-@Tag(name = "CRUD REST APIs for Feedback Resource")
-@CrossOrigin(origins = "http://localhost:3000") // Replace with the actual URL of your ReactJS app
 
 
 
-
-
-//@Tag(name = "Feedback", description = "APIs for handling feedback")
-
-
-
-
-
-
-public class FeedbackController {
-
-    @Autowired
-    private FeedbackService feedbackService;
+//@RestController
+////@RequestMapping("/api/feedback")
+//@RequestMapping("/api/v1/feedback")
+//
+////@CrossOrigin(origins = "http://localhost:3000") // Replace with the actual URL of your ReactJS
+//@Tag(name = "CRUD REST APIs for Feedback Resource")
+//@CrossOrigin(origins = "http://localhost:3000") // Replace with the actual URL of your ReactJS app
+//
+//
+//
+//
+//
+////@Tag(name = "Feedback", description = "APIs for handling feedback")
+//
+//
+//
+//
+//
+//
+//public class FeedbackController {
+//
+//    @Autowired
+//    private FeedbackService feedbackService;
 
 //    @PostMapping
 ////    public ResponseEntity<String> submitFeedback(@RequestBody Map<String, String> feedbackMap) {
@@ -174,71 +177,144 @@ public class FeedbackController {
 
 
 
-    @PostMapping
-    @Operation(summary = "Submit Feedback REST API", description = "Submit Feedback REST API is used to save the feedback into a trainee")
-    @ApiResponses
-    (
-               @ApiResponse
-                       (
-                               responseCode = "200",
-                               description = "HTTP status 200 OK"
-
-                       )
-
-    )
-
-    public ResponseEntity<String> submitFeedback(@RequestBody String feedbackContent) {
-        try {
-            System.out.println("Received feedback: " + feedbackContent);
-
-            Feedback feedback = new Feedback();
-            feedback.setContent(feedbackContent);
-            feedbackService.saveFeedback(feedback);
-
-            System.out.println("Feedback saved successfully!");
-
-            return ResponseEntity.ok("Feedback submitted successfully!");
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseEntity.status(500).body("Error submitting feedback: " + e.getMessage());
-        }
-    }
-
-
-    @Operation(summary = "Fetch all the Feedback REST APIs", description = "Fetch all the Feedback REST APIs is used to" +
-                        " fetch all the feedbacks given by the trainee")
-    @ApiResponses
-            (
-                    @ApiResponse
-                    (
-                       responseCode = "200",
-                       description = "HTTP status code 200, OK - Fetched all the feedbacks"
-
-                    )
-
-            )
-    @GetMapping("/getAll")
-    public ResponseEntity<List<Feedback>> getAllFeedback() {
-        List<Feedback> allFeedback = feedbackService.getAllFeedback();
-        return ResponseEntity.ok(allFeedback);
-    }
-
-
-
-
-
-//    @GetMapping("/swagger-ui/index.html")
-//    public String swaggerUi() {
-//        return "redirect:/swagger-ui/index.html";
+//    @PostMapping
+//    @Operation(summary = "Submit Feedback REST API", description = "Submit Feedback REST API is used to save the feedback into a trainee")
+//    @ApiResponses
+//    (
+//               @ApiResponse
+//                       (
+//                               responseCode = "200",
+//                               description = "HTTP status 200 OK"
+//
+//                       )
+//
+//    )
+//
+//    public ResponseEntity<String> submitFeedback(@RequestBody String feedbackContent) {
+//        try {
+//            System.out.println("Received feedback: " + feedbackContent);
+//
+//            Feedback feedback = new Feedback();
+//            feedback.setContent(feedbackContent);
+//            feedbackService.saveFeedback(feedback);
+//
+//            System.out.println("Feedback saved successfully!");
+//
+//            return ResponseEntity.ok("Feedback submitted successfully!");
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return ResponseEntity.status(500).body("Error submitting feedback: " + e.getMessage());
+//        }
 //    }
+//
+//
+//    @Operation(summary = "Fetch all the Feedback REST APIs", description = "Fetch all the Feedback REST APIs is used to" +
+//                        " fetch all the feedbacks given by the trainee")
+//    @ApiResponses
+//            (
+//                    @ApiResponse
+//                    (
+//                       responseCode = "200",
+//                       description = "HTTP status code 200, OK - Fetched all the feedbacks"
+//
+//                    )
+//
+//            )
+//    @GetMapping("/getAll")
+//    public ResponseEntity<List<Feedback>> getAllFeedback() {
+//        List<Feedback> allFeedback = feedbackService.getAllFeedback();
+//        return ResponseEntity.ok(allFeedback);
+//    }
+//
+//
+//
+//
+//
+////    @GetMapping("/swagger-ui/index.html")
+////    public String swaggerUi() {
+////        return "redirect:/swagger-ui/index.html";
+////    }
+//
+//
+//
+//
+//
+//}
+
+
+
+
+
+@RestController
+@RequestMapping("api/feedbacks")
+public class FeedbackController
+{
+    @Autowired
+    private FeedbackService feedbackService;
+
+
+    private FeedbackRepository feedbackRepository;
+
+
+    @PostMapping("/save")
+    public ResponseEntity<String> saveFeedback(@RequestBody Feedback feedback)
+    {
+        ResponseEntity<Feedback> saveFeedback = feedbackService.saveFeedback(feedback);
+        return ResponseEntity.ok("Feedback saved successfully");
+    }
+
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Feedback>> getAllFeedback()
+    {
+        return feedbackService.getAllFeedbacks();
+    }
+
+
+    @GetMapping("/filtered")
+    public ResponseEntity<List<Feedback>> getFilteredFeedback(@RequestParam(value = "comment") String comment)
+    {
+        ResponseEntity<List<Feedback>> listOfFilteredFeedbacks =
+
+
+                feedbackService.getFilteredFeedbacks(
+
+                            feedback -> feedback.getContent() != null && feedback.getContent().contains(comment)
+                                                    );
+
+
+        return listOfFilteredFeedbacks;
+    }
 
 
 
 
 
 
+
+
+
+
+    @GetMapping("/comment-length")
+    public ResponseEntity<Integer> getFeedbackCommentLength(@RequestParam Long feedbackId)
+    {
+        Feedback feedback = feedbackService.getAllFeedbacks().getBody()
+                .stream()
+                .filter(fb -> fb.getId().equals(feedbackId))
+                .findFirst()
+                .orElseThrow(()-> new IllegalArgumentException("Feedback not found"));
+
+                return ResponseEntity.ok(FeedbackService.feedbackCommentLength.apply(feedback));
+    }
 }
+
+
+
+
+
+
+
 
 
 
