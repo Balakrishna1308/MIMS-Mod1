@@ -31,4 +31,5 @@ public interface FeedbackService{
     Function<String, Integer> commentLength = String::length;
     Function<Feedback, Integer> feedbackCommentLength = feedbackComment.andThen(commentLength);
 
+    CompletableFuture<List<Feedback>> searchFeedbackByComment(String keyword);
 }

@@ -47,8 +47,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.swing.table.TableCellEditor;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 
 //@RestController
 //@RequestMapping("/api/feedback")
@@ -246,15 +248,20 @@ import java.util.Map;
 
 
 
+//@RestController
+//@RequestMapping("api/feedbacks")
+//public class FeedbackController
 @RestController
 @RequestMapping("api/feedbacks")
 public class FeedbackController
 {
+//    @Autowired
+//    private FeedbackService feedbackService;
+
     @Autowired
     private FeedbackService feedbackService;
 
-
-    private FeedbackRepository feedbackRepository;
+//    private FeedbackRepository feedbackRepository;
 
 
     @PostMapping("/save")
@@ -306,6 +313,24 @@ public class FeedbackController
                 .orElseThrow(()-> new IllegalArgumentException("Feedback not found"));
 
                 return ResponseEntity.ok(FeedbackService.feedbackCommentLength.apply(feedback));
+    }
+
+
+    @GetMapping("/search")
+    public CompletableFuture<ResponseEntity<List<Feedback>>> searchFeedbacks(@RequestParam String keyword)
+    {
+        CompletableFuture<ResponseEntity<List<Feedback>>> responseEntityCompletableFuture = feedbackService.searchFeedbackByComment(keyword).
+                thenApply(
+                        feedbacks -> {
+                            if (feedbacks.isEmpty()) {
+                                return ResponseEntity.noContent().build();
+                            }
+
+                            return ResponseEntity.ok(feedbacks);
+                        }
+                );
+        return responseEntityCompletableFuture;
+
     }
 }
 

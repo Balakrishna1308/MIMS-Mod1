@@ -50,16 +50,21 @@ import com.myshow4all.student_internship_program.repository.FeedbackRepository;
 import com.myshow4all.student_internship_program.service.FeedbackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+//@Service
 @Service
+//public class FeedbackServiceImpl implements FeedbackService
 public class FeedbackServiceImpl implements FeedbackService
 {
 
+//    @Autowired
     @Autowired
     private FeedbackRepository feedbackRepository;
 
@@ -86,4 +91,12 @@ public class FeedbackServiceImpl implements FeedbackService
 
            return ResponseEntity.ok(filteredFeedbacks);
     }
+
+    @Override
+    @Async
+    public CompletableFuture<List<Feedback>> searchFeedbackByComment(String keyword) {
+        CompletableFuture<List<Feedback>> feedbacksContainingKeyword = feedbackRepository.findByCommentContaining(keyword);
+        return feedbacksContainingKeyword;
+    }
+
 }
